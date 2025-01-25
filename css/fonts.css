@@ -1,0 +1,63 @@
+@charset "utf-8";
+
+/*-----------------------
+  Schriften
+  -----------------------*/
+ 
+
+/*@import
+@import bindet eine externe Quelle ein und könnte u. a. für die Einbindung einer Schriftart verwendet werden.
+  Kann als CSS Variante zu einem HTML link Befehl betrachtet werden.*/
+
+
+  /* @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap'); */
+
+
+@import url("all.min.css");  
+.fa-brands,
+.fa-solid,
+.fa-regular
+ {
+  font-size: 1.5rem;
+  color: #000;
+}
+    
+  /*@font-face
+  Einbindung einer lokalen Schriftart, die in einem Projektordner angelegt ist, font-family dient der Vergabe eines frei wählbaren Namens. 
+  srcdient der EInbindung einer oder mehrerer Dateiformate
+  */  
+  @font-face {
+    font-family: Roboto;
+    src: 
+      url("../fonts/Roboto/roboto-regular-webfont.woff2") format("woff2"),
+      url("../fonts/Roboto/roboto-regular-webfont.woff") format("woff"),
+      url("../fonts/Roboto/Roboto-Regular.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: Roboto;
+    src: 
+      url("../fonts/Roboto/Roboto-Bold.ttf") format("truetype");
+    font-weight: bold;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: Lato;
+    src: 
+      url("../fonts/Lato/lato-regular-webfont.woff2") format("woff2"),
+      url("../fonts/Lato/lato-regular-webfont.woff") format("woff"),
+      url("../fonts/Lato/Lato-Regular.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: Lato;
+    src: 
+      url("../fonts/Lato/Lato-Bold.ttf") format("truetype");
+    font-weight: bold;
+    font-style: normal;
+  }

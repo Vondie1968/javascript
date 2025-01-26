@@ -18,6 +18,13 @@ Inhaltesverzeichnis
 /*-----------------------------
 Basisformatierung
 ------------------------------*/
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
 
 #wrapper {
   background-color:var(--bg-color) ;
@@ -41,7 +48,7 @@ body {
   font-style: normal;
   line-height: calc(var(--spacer) * 1.5);
   word-spacing: calc(var(--spacer) / 20);
-  min-height: 100vh;
+  min-height: 100%;
   overflow-y: scroll;
 
 }
@@ -52,8 +59,8 @@ header {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  height: var(--spacer) * 5.5;
-  margin: 0 0 1.125rem 0;
+  height: calc(var(--spacer) * 5.5);
+  margin: 0 0 1.25rem 0;
   padding: 0.625rem;
   position: sticky;
   top: 0;
@@ -71,10 +78,54 @@ footer {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  height: var(--spacer) * 4;
+  height: calc(var(--spacer) *4);
   padding: 0.625rem;
   position: sticky;
   bottom: 0;
   z-index: 9998;
   border-top: 1px solid var(--headline);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: var(--headline);
+  font-family: Roboto, Arial, sans-serif;
+  font-weight: bold;
+  font-style: normal;
+  padding: 1rem 0;
+  margin: 0 0 1.5 0;
+}
+
+h1 {
+  font-size: 1.5rem;
+}
+h2 {
+  font-size: 1.25rem;
+}
+
+h3 {
+  font-size: 1.125rem;
+}
+
+h4 {
+  font-size: 1rem;
+}
+
+p {
+  margin: 0.625rem 0;
+  /* border: 1px solid var(--line-color); */
+}
+
+code {
+  display: flex;
+  flex-wrap: wrap;
+  color: var(--headline);
+  font-size: 1rem;
+  font-style: italic;
+  margin: 1rem 0 1rem 0;
+  padding:  0.125rem 0 0.125rem 0.5rem;
+  border-top: 1px solid var(--line-color);
+  border-bottom: 1px solid var(--line-color);
 }

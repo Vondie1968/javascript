@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="css/style.css" rel="stylesheet" media="screen">
-  <title>Document</title>
+  <title>JavaScript</title>
 </head>
 <body>
 
@@ -15,11 +15,90 @@
     </header>
 
     <main>
-      <h1>Weiterbildung JavaScript</h1>
+      <h1>indexOf</h1>
 
-      <p>
-        <h2>Was ist Javascript</h2>
-      </p>
+    <p>
+      Mit indexOf kann man innerhalb eines Strings die Position eines definierten Strings gesucht. Dessen Position wird dann ausgegeben.
+    </p>
+
+    <h2>substr</h2>
+    <p>
+      Mit substr kann man einen Teilstring aus einem größeren String extraieren. <br>
+
+      <code>
+        let name = 'Andreas Vondenhoff';
+
+        let nachname = name.substr(8);
+        let vorname = name.substr(0,7);
+
+        console.log(nachname);
+        console.log(vorname);
+      </code><br>
+    
+      name.substr(0, 7) ==> 0=Start und 7 = Länge<br>
+      in Zukunft name.substring(0, 7) ==> 0 = Start und 7 = Endposition<br>
+    </p>
+
+    <p>
+      Mann kann mehrere Anweisungen in einem String verknüpfen. Z.B<br>
+      <code>nachname = nachname.charAt(0).toUpperCase() + nachname.substr(1).toLowerCase();</code>
+    </p>
+
+    <h2>charAt</h2>
+    <p>Verwende stattdessen die Funktion charAt. Sie erwartet als Parameter die Position des zu extrahierenden Zeichens. Zum Beispiel:<br>
+
+      <code>nachname = nachname.charAt(0).toUpperCase() + nachname.substr(1).toLowerCase();</code><br>
+      
+      In diesem Fall wird der erste Buchstabe des Strings "nachname" gesucht, charAt(0). Das toUpperCase dient dazu die Ausgabe im des Wertes in Großbuchstaben auszugeben.
+    </p>
+
+    <h2>replace</h2>
+    <p>
+      Replaceermöglicht es, innerhalb eines Strings Ersetzungen vorzunehmen. Als ersten Parameter erwartet die Funktion den gesuchten String und als zweiten den Austausch-String.<br>
+      Codebeispiel:<br>
+      <code>let produkt = 'Konterkaffee';<br>
+        let produktBeschreibung = 'Der Konterkaffee ist ideal zum Rausch bekämpfen, Kaufe Konterkaffee';<br>
+        
+        let neuesProdukt = 'Kaffeebrause'<br>
+        
+        console.log(produktBeschreibung.replace(produkt, neuesProdukt));</code>
+
+      In der ersten Zeile wird der Produktname festgelegt. In der Zweiten Zeile eine Produkbeschreibung. In beiden Zeilen solle "Konterkaffee" gegen den neuen Produktnamen "Kaffeebrause", der in Zeile 4 definiert wird ausgetauscht werden.
+      Mit dem anschließende console.log wird allerdings nur die erste Erwähnung ausgetauscht.
+
+      Um alle auszutauschen, muss der Code etwas umgeschrieben werden:<br>
+
+        <code>let produkt = /Konterkaffee/g;
+          let produktBeschreibung = 'Der Konterkaffee ist ideal zum Rausch bekämpfen, Kaufe Konterkaffee';
+          
+          let neuesProdukt = 'Kaffeebrause'
+          
+          console.log(produktBeschreibung.replace(produkt, neuesProdukt));</code><br> 
+      
+      <b>Mit dem der Regular Expression, eingeleitet durch// und dem Buchstaben g in der ersten Zeile (g = global) werden alle in Zeile 1 definierten Strings gegen den neunen getauscht. </b><br>
+      <em>Wenn man im zu ersetzenden String ' 'macht kann man falsche Angaben entfernen.</em>
+    </p>
+    
+    <h2>include</h2>
+
+    <p>
+      Die erhält als ersten Parameter den Search String, nach welchem gesucht werden soll. Optional kannst du auch noch einen zweiten Parameter in Form eines Startindexes für die Suche angeben. Wenn du keinen Startindex übergibst, wird 0 impliziert. <br>
+      Mit includes() sieht der Code dann so aus:<br>
+
+      <code>let produkt = 'Konterkaffee';
+        let search = "Konter"
+        
+        console.log(produkt.toLowerCase().includes(search.toLowerCase()));</code>
+      
+      Hier wurde noch über toLowerCase noch die Groß und Kleinschreibung berücksichtigt. Das ist Grundlage einer Suchfunktion.  
+    </p>
+
+    <h2>startWith</h2>
+    <p>
+      Der Aufbau der Funktion startsWith() ähnelt ebenfalls dem von includes(). Der erste benötigte Parameter ist wieder der gesuchte Teilstring. <br>
+      Ebenfalls kannst du optional auch noch einen zweiten Parameter in Form eines Startindexes für die Suche angeben. <br>
+      Wenn du keinen Startindex übergibst, wird 0 impliziert. Der Rückgabewert ist true, wenn der gesuchte String zu Beginn des durchsuchten Strings gefunden wird. Ist dem nicht der Fall, wird false zurückgegeben. startsWith() ist ebenfalls case-sensitive. Du musst also wieder auf Groß- und Kleinschreibung achten.<br>
+    </p>
 
 
     </main>
